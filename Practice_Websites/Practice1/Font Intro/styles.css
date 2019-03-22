@@ -1,0 +1,59 @@
+ /*font-family*/
+ p {
+ 	font-family: Times New Roman;
+ }
+
+ h1 {
+ 	font-family: Georgia;
+ }
+
+ /*font-size*/
+
+ h1 {
+ 	font-size: 35px;
+ }
+
+ p {
+ 	font-size: 20px;
+ }
+
+
+/* 
+This selector will double the font size of the text in the span.
+In this case it will make the font size 40px because the 'p' tag is the parent
+tag
+*/
+ span { 
+ 	font-size: 2.0em;
+ }
+
+
+ /*
+ font-weight. Refers to how thick the lines of the text are(bold). Some fonts can use
+ numerical values(every 100 from 100 to 800).
+ */
+ p {
+ 	font-weight: normal;
+ }
+ /*line-height. Changes the spacing above and below the text.*/
+
+ p {
+ 	line-height: 1.5;
+ }
+ /*text-align. Similar to Microsoft word text align.*/
+
+ h1 {
+ 	text-align: right;
+ }
+
+ p {
+ 	text-align: center;
+ }
+
+ /*text-decoration. Underline, overline, line-through*/
+
+ p {
+ 	text-decoration: overline;
+ }
+
+
