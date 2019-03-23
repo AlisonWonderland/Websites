@@ -1,0 +1,13 @@
+/*font-size*/
+p {
+	font-size: 20px;
+}
+
+p {
+	/*Content - width and height*/
+	width: 200px;
+	/*Border*/
+	border: 5px solid red;
+	/*Padding*/
+	/*Margin*/
+}
