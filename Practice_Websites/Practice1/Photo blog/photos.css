@@ -1,0 +1,15 @@
+img {
+	width: 30%;
+	float: left; /*Removes automatic spacing from html*/
+	margin: 1.666%;
+}
+
+p {
+	font-family: Open Sans Condensed;
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-bottom: 2px solid #f1f1f1;
+	padding-bottom: 20px;
+	
+}
