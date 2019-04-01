@@ -3,7 +3,7 @@ body {
 	width: 850px;
 	height: auto;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 12px;
 	filter: brightness(85%);
 }
 
@@ -26,4 +26,30 @@ h3 {
 p {
 	font-family: Source Sans Pro;
 	font-size: 18px;
+}
+
+p.first-paragraph {
+	padding-left: 5px;
+	border-left-width: 8px;
+	border-left-color: #929191;
+	border-left-style: solid;
+}
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
 }
