@@ -1,0 +1,29 @@
+body {
+	border: 20px solid #FFCEA6;
+	width: 850px;
+	height: auto;
+	margin: 0 auto;
+	padding: 10px;
+	filter: brightness(85%);
+}
+
+h1 {
+	color: #A59C9A;
+	text-align: center;
+}
+
+h2 {
+	color: #929191;
+	font-size: 30px;
+}
+
+h3 {
+	color: #89D389;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+p {
+	font-family: Source Sans Pro;
+	font-size: 18px;
+}
