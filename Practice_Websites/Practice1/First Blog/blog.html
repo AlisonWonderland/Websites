@@ -19,17 +19,12 @@
 
 <hr class="style-seven">
 
-<h3>October 31 1982</h3>
-<h2>Jelly bean ipsum post</h2>
-<p class="first-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum. lorem</p>
-<p>Jelly beans jelly-o toffee tootsie roll tart cookie soufflé chocolate cake. Lollipop candy canes I love. Topping candy canes chocolate. Tiramisu gingerbread tart sesame snaps sesame snaps soufflé jelly gummi bears. Tiramisu icing candy ice cream soufflé brownie jelly beans I love. I love ice cream chocolate cake jelly chocolate cake I love I love. Liquorice biscuit halvah gummi bears donut cheesecake chocolate cake. Jelly-o biscuit I love icing sesame snaps I love marzipan I love biscuit. Cheesecake I love sesame snaps powder icing pie powder. Caramels danish icing caramels tiramisu I love. Biscuit halvah I love muffin bear claw soufflé. Pudding marshmallow croissant I love ice cream cake tart. Oat cake jelly-o sugar plum halvah cheesecake candy canes sweet pudding. </p>
+<h3>April 4 2019</h3>
+<h2>A mind dump</h2>
+<p class="first-paragraph">Just going to use this post to write down everything I've "learned" in my study period. Will probably be doing this for future blog posts since I don't know what else to write about</p>
+<p>So just did some OS review. OS' have privleged access to hardware, it makes sense since you don't want programs to worry about i/o connections or memory allocation. And the way that programs get access to these resources are system calls. When a system call is invoked the program enters kernel mode and then when the kernel is done the program goes back to user mode. And all these means that the hardware, usually the cpu needs a way of telling the operating system what kind of privileges each process has. So we want the hardware to help the os with events in software and i/o. We also want to be given access to registers, control this access to processes. OS' "sleep". Meaning they not running consistenly when the pc is on. They only respond to events and go back to sleep after some time, same power consumption maybe even saves some RAM or CPU usage, idk about the previous. Also don't expect all the words to be spelled correctly. Implement a word corrector would be pretty nice.</p>
 <p>
-Jelly-o cake sweet roll cake. Tart donut sweet bear claw. Pudding cotton candy jujubes cookie lollipop. Cookie I love muffin bear claw. Cookie sweet I love chocolate candy gingerbread. Fruitcake muffin gummies I love pastry bonbon bonbon. I love cake pastry gummi bears brownie. Chocolate cake macaroon brownie candy carrot cake I love cupcake. Soufflé bear claw I love croissant oat cake I love tootsie roll I love. Dessert dragée cake marshmallow jelly-o tart brownie sweet roll. I love cookie apple pie muffin jelly beans muffin powder. Cotton candy chocolate bar jujubes cake sugar plum. Cupcake lollipop sugar plum macaroon bonbon lemon drops wafer. Muffin macaroon marshmallow caramels pastry tootsie roll chupa chups.</p>
+Making this neater. so hardware must support OS and user mode, they do this by have a mode bit in a protected control register. pcr. If the user program executes a system call the os gets alerted by a TRAP and then gives that program high priority. traps occur when a proccess divides by zero or accesses invalid memory. This is one way that OS' are alerted when a system call occurs. So its something that is expected. an interrupt on the other hand is caused by hardware, this is unexpected. To many ways that it can happen.</p>
 
 <hr class="style-seven">
 
