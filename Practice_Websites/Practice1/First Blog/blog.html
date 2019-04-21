@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Marcos Leandro: My journey</title>
-	<link rel="stylesheet" type="text/css" href="blogStyles.css">
+	<link rel="stylesheet" type="text/css" href="blog.css">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600" rel="stylesheet">
 </head>
 <body>
@@ -25,6 +25,14 @@
 <p>So just did some OS review. OS' have privleged access to hardware, it makes sense since you don't want programs to worry about i/o connections or memory allocation. And the way that programs get access to these resources are system calls. When a system call is invoked the program enters kernel mode and then when the kernel is done the program goes back to user mode. And all these means that the hardware, usually the cpu needs a way of telling the operating system what kind of privileges each process has. So we want the hardware to help the os with events in software and i/o. We also want to be given access to registers, control this access to processes. OS' "sleep". Meaning they not running consistenly when the pc is on. They only respond to events and go back to sleep after some time, same power consumption maybe even saves some RAM or CPU usage, idk about the previous. Also don't expect all the words to be spelled correctly. Implement a word corrector would be pretty nice.</p>
 <p>
 Making this neater. so hardware must support OS and user mode, they do this by have a mode bit in a protected control register. pcr. If the user program executes a system call the os gets alerted by a TRAP and then gives that program high priority. traps occur when a proccess divides by zero or accesses invalid memory. This is one way that OS' are alerted when a system call occurs. So its something that is expected. an interrupt on the other hand is caused by hardware, this is unexpected. To many ways that it can happen.</p>
+
+<h3>April 21 2019</h3>
+<h2>Midnight, the stars and iframe</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-fN-Xjpd-qE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p class="first-paragraph"> Yesterday I figured I would learn how to add a youtube video to a website.
+Turns out its quite simple all you need is a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe">iframe tag.</a></p>
+<p>This is going to be useful for the database senior project, if its actually offered next year.</p>
+
 
 <hr class="style-seven">
 
