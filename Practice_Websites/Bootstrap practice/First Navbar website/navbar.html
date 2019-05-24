@@ -12,20 +12,56 @@
     		height: 100px;
     	}
     </style>
+    <script
+	  src="https://code.jquery.com/jquery-2.2.4.js"
+	  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+	  crossorigin="anonymous"></script>
+    <script src="bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class = "navbar navbar-default">
+		<div class="container">
+
+		<!--Hamburger button. Data target is the id of the info we want to put in the hamburger-->
+		
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#test" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      	</button>
+
+      	<!-- Leave image in header to make hamburger dropdown menu go under image-->
+      	<div class="navbar-header">
 		 <a class="navbar-brand" href="#">
     		<img class "pull-left" src="http://flco.com/wp-content/uploads/2017/02/annex-logo.jpg" width="150" height="35"
     		style="position:relative;top:-10px" alt="">
-  		</a>
-		<div class="nav navbar-nav">
-			<li><a href="#">News</a></li>
-			<li><a href="#">Teams</a></li>
-			<li><a href="#">Live</a></li>
-			<li><a href="#">Gallery</a></li>
-			<li><a href="#">Join Us</a></li>
-		</div>
+	  		</a>
+	  	</div>
+	  		<!--Create a hamburger for phones -->
+	        <div class="collapse navbar-collapse" id="test">
+				<div class="nav navbar-nav">
+					<li><a href="#">News</a></li>
+					<li><a href="#">Teams</a></li>
+					<li><a href="#">Live</a></li>
+					<li><a href="#">Gallery</a></li>
+					<li><a href="#">Join Us</a></li>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		          </ul>
+		        </li>
+		        </ul>
+	    	</div>
+  		</div>
 	</nav>
 </body>
 </html>
