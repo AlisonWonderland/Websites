@@ -2,15 +2,46 @@
 <html>
 <head>
 	<title>Grid system practice	</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+
+	<style type="text/css"> 
+		.pink {
+			background: pink;
+			border: 1px solid purple;
+			/*width: 20%;*/
+		}
+	</style>
 </head>
 <body>
-	<ul class="flex-container">
-	  <li class="flex-item">1</li>
-	  <li class="flex-item">2</li>
-	  <li class="flex-item">3</li>
-	  <li class="flex-item">4</li>
-	  <li class="flex-item">5</li>
-	  <li class="flex-item">6</li>
-	</ul>
+	<!-- Grid must always be inside container -->
+<div class="container">
+	<!-- <div class="row">
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+		<div class="col-lg-1 col-md-2" >COL LG 1</div>
+	</div> -->
+	<div class="row">
+		<div class="col-md-3 col-sm-6 pink" >
+			<!-- Nested grid -->
+			<div class="row">
+				<div class="col-lg-6 pink"> First Box </div>
+				<div class="col-lg-6 pink"> Second Box </div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 pink" >COL LG 3</div>
+		<div class="col-md-3 col-sm-6 pink" >COL LG 3</div>
+		<div class="col-md-3 col-sm-6 pink" >COL LG 3</div>
+	</div>
+</div>
+
 </body>
 </html>
