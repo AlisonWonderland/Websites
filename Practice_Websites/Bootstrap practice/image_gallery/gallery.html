@@ -4,15 +4,45 @@
 	<title>Image Gallery</title>
 </head>
 
+<!-- CDN LINKS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
 </script>
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!-- Padding to make space between the navbar and jumbotron -->
+<style type="text/css">
+	body {
+		padding-top: 70px;
+	}
+	.flex {
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+	.jumbotron {
+		color: #20611F;
+		background: #ECF0F1;
+	}
+	.navbar-inverse {
+		background: #1A5019;
+	}
+	.navbar-inverse .navbar-nav>li>a {
+    	color: white;
+	}
+	.navbar-inverse .navbar-brand {
+    	color: white;
+	}
+</style>
 
 <body>
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -21,7 +51,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Gllery</a>
+	      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Gllery</a>
 	    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,69 +72,69 @@
 
 <div class="container">
 	<div class="jumbotron">
-		<h1>Image Gallery</h1>
-		<p>Pictures I got from artstation. Please don't sue.</p>
+		<h1><i class="fas fa-camera-retro"></i> Image Gallery</h1>
+		<p>Pictures I got from artstation that I liked. Please don't sue.</p>
 	</div>
 
-	<div class="row">
-		<div class="col-lg-4">
+	<div class="row flex">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
 				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdnb.artstation.com/p/assets/images/images/018/736/715/large/bo-xun-lin-02.jpg?1560511730">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/017/637/656/large/joseph-lin-dragon-concept-art.jpg?1556782454">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/016/668/942/large/jonathan-berube-tequieria-v06.jpg?1553019008">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/012/578/118/large/matt-rhodes-me2-mattrhodes-illusivemanoffice-02.jpg?1535482574">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/016/576/356/large/eunice-ye-.jpg?1552660522">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/017/927/180/large/zhengyi-wang-loading-screen-dragonfall-2.jpg?1557873253">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdnb.artstation.com/p/assets/images/images/017/878/935/large/masahiro-sawada-e2.jpg?1557697385">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdnb.artstation.com/p/assets/images/images/018/688/793/large/jennifer-park-3.jpg?1560333167">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdnb.artstation.com/p/assets/images/images/010/362/203/large/vanessa-palmer-bfa2018-libraryhome-ver11sm.jpg?1524021705">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdna.artstation.com/p/assets/images/images/018/651/920/large/rasmus-poulsen-journey.jpg?1560198371">
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-4 col-sm-6">
 			<div class="thumbnail">
-				<img src="https://cdnb.artstation.com/p/assets/images/images/016/270/767/large/magno-coutinho-hilda-cam01-16-02.jpg?1551545584">
+				<img src="https://cdnb.artstation.com/p/assets/images/images/015/630/481/large/piotr-roslan-exploring-dimensions.jpg?1549028624">
 			</div>
 		</div>
 	</div>
