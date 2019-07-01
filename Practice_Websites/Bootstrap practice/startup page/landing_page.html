@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Purrfect Match</title>
+	<title>Wooffect Match</title>
 
-	<!-- CDN LINKS -->
+	<!-- EXTERNAL LINKS -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous">
@@ -14,22 +16,41 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<style>
-		body, html {
+		html {
 		  height: 100%;
 		}
 
-		.full_window { 
-		  /* Full height */
-		  height: 100%;
-		  width: 100%;
+		body {
+			background-image: url(https://www.cutepuppiesnow.com/wp-content/uploads/2017/06/Dog-Wallpaper.jpg);
+			background-size: cover;
+			background-position: center;
+			font-family: Lato;
+			color: white;
 		}
 
-		 nav.transparent{
+		nav.transparent{
 		    background: rgba(0, 0, 0, 0.6); /*To make navbar more transparent*/
 		}
 
 		.nav.navbar-nav li a, .navbar .navbar-header .navbar-brand {
 		    color: white;
+		}
+
+		#content {
+			text-align: center;
+			padding-top: 25%;
+			text-shadow: 0.075em 0.08em 0.1em rgba(0, 0, 0, 1);
+		}
+
+		h1 {
+			font-weight: 700;
+			font-size: 5em; 
+		}
+
+		hr {
+			width: 600px;
+			border-top: 1px solid #f8f8f8;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 		}
 
 	</style>
@@ -48,32 +69,37 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Purrfect Match</a>
+	      <a class="navbar-brand" href="#">Wooffect Match</a>
 	    </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
+				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#">About</a></li>
 				<li><a href="#">Contact</a></li>
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Signup</a></li>
-				<li><a href="#">Login</a></li>
+				<li><a href="#"><i class="fas fa-user-plus"></i> Signup</a></li>
+				<li><a href="#"><i class="fas fa-user"></i> Login</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>
 
-<img src="https://www.cutepuppiesnow.com/wp-content/uploads/2017/06/Dog-Wallpaper.jpg" class="full_window">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div id="content">
+				<h1>Wooffect Match</h1>
+				<h3> A human-canine dating app</h3>
+				<hr>
+				<button class="btn btn-default btn-lg"><i class="fas fa-paw"></i> Get Started!</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 </html>
