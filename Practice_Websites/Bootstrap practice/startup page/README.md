@@ -1,7 +1,14 @@
 # About
 Mock landing page for a pet-human dating startup.
 
-## ADD SCREENSHOT AND CREATE NEW CSS FOLDER
+## SCREENSHOT in a full window
+![alt text](https://i.imgur.com/0il7uUa.png)
+
+## Screenshot of website shrinked halfway/tablet size
+![alt text](https://i.imgur.com/nIKuh9O.png)
+
+## Screenshot of website mobile size
+![alt text](https://i.imgur.com/kDYEILh.png)
 
 ## What I Learned/Did
 * background-size: Fills out width and height of screen, to fit image on screen.
