@@ -1,6 +1,8 @@
 # About
 Practice website I created to try out a video background website. Going to be a precursor for the Kaliman website
 
+## REMOVE VID FROM FOLDER
+
 ## Screenshots in GIF form
 
 ## What I learned
