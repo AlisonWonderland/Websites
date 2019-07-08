@@ -17,3 +17,4 @@ Repo where I store all websites using Bootstrap 4
 ## Misc notes
 * rem units are relative to font size. Thus, rems help scale websites.
 * Nav bars now need the expand class added for the hamburger to work.
+* Look at the docs for everything
