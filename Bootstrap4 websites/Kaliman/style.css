@@ -1,3 +1,15 @@
+.navbar {
+    position: absolute; 
+    z-index: 1;
+    font-size: 2rem;
+    text-shadow: 2px 2px 3px #272829;
+    background: rgba(0, 0, 0, 0.1); /*To make navbar more transparent*/
+    width: 100%
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: rgb(255,102,203);
+  } 
 
 .section {
     position: relative;
@@ -25,9 +37,4 @@
     top: 0;
     left: 0;
     width: 100%;
-}
-
-footer {
-    padding: 1rem;
-    background: lightgray;
 }
