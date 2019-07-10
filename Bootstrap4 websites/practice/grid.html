@@ -8,40 +8,28 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>The Grid</title>
+    <title>Grid + Flexbox</title>
 </head>
 <body>
     <div class="container">
         <h1 class="text-center display-4">The Grid</h1>
-        <div class="row border border-danger">
-            <h3 class="col-8 col-md-6 col-lg-12 text-center bg-warning mb-0">HALF</h3>
-            <h3 class="col-4 col-md-6 col-lg-12 text-center bg-primary mb-0">HALF</h3>
-        </div>
-    </div>
-
-    <div class="container bg-secondary mt-5 ">
-            <div class="row justify-content-md-center border-bottom border-warning">
-              <div class="col col-lg-2 border-right border-warning">
-                1 of 3
-              </div>
-              <div class="col-md-auto border-right border-warning">
-                Variable width content
-              </div>
-              <div class="col col-lg-2">
-                3 of 3
-              </div>
+          <div class="row border justify-content-center align-items-start">
+            <div class="col-2 bg-warning">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nesciunt.
             </div>
-            <div class="row">
-              <div class="col border-right border-warning">
-                1 of 3
-              </div>
-              <div class="col-md-auto border-right border-warning">
-                Variable width content
-              </div>
-              <div class="col col-lg-2">
-                3 of 3
-              </div>
+            <div class="col-2 bg-warning align-self-end">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nesciunt.
             </div>
+            <div class="col-2 bg-success">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat quas fugit beatae rem ullam earum nihil laboriosam illum labore tenetur.
+            </div>
+            <div class="col-2 bg-warning align-self-end">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nesciunt.
+            </div>
+            <div class="col-2 bg-warning">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, nesciunt.
+            </div>
+          </div>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
