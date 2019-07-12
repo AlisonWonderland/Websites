@@ -2,6 +2,15 @@
 
 # Screenshots
 
+## Full screen
+![Full screen](https://i.imgur.com/0PWVbzR.png)
+
+## Half screen
+![Half screen](https://i.imgur.com/GFCfV8g.png)
+
+## Mobile sized
+![Mobile sized](https://i.imgur.com/j9uwWyB.png)
+
 # What I learned/did
 * Learned what the 'aria-label' attribute does from bootstrap. It provides a description for screenreaders.
 * Changing font colors when hovering over links.
