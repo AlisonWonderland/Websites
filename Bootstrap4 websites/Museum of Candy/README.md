@@ -5,7 +5,7 @@
 ## Full screen
 ![Full screen](https://i.imgur.com/0PWVbzR.png)
 
-## Half screen
+## Half screen and scrolled down
 ![Half screen](https://i.imgur.com/GFCfV8g.png)
 
 ## Mobile sized
