@@ -1,6 +1,4 @@
 .navbar {
-    position: absolute; 
-    z-index: 1;
     font-size: 2rem;
     text-shadow: 2px 2px 3px #272829;
     background: rgba(0, 0, 0, 0.1); /*To make navbar more transparent*/
@@ -10,3 +8,14 @@
 .custom-toggler.navbar-toggler {
     border-color: rgb(255,102,203);
   } 
+
+h1 {
+    padding-top: 2rem;
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 100;
+}
