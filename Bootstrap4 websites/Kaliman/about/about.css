@@ -1,13 +1,26 @@
+#about-link {
+    color: #cc9966;
+}
+
+#last-paragraph {
+    margin-bottom: 5rem;
+}
+
 .navbar {
     font-size: 2rem;
     text-shadow: 2px 2px 3px #272829;
-    background: rgba(0, 0, 0, 0.1); /*To make navbar more transparent*/
+    background: rgba(102, 153, 204, 1); /*To make navbar more transparent*/
     width: 100%
 }
 
 .custom-toggler.navbar-toggler {
     border-color: rgb(255,102,203);
-  } 
+} 
+
+div p {
+    font-size: 2rem;
+    font-weight: 100;
+}
 
 h1 {
     padding-top: 2rem;
@@ -19,3 +32,5 @@ h2 {
     font-size: 4rem;
     font-weight: 100;
 }
+
+
