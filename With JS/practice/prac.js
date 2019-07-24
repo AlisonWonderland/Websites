@@ -1,17 +1,12 @@
-function kebabToSnake(kebab) {
-    snake = "";
-    lastIndex = 0;
-    for(var i = 0; i < kebab.length; ++i) {
-        if(kebab.charAt(i) === "-") {
-            snake += kebab.slice(lastIndex, i) + "_"
-            lastIndex = i+1;
-        }
-    }
-    snake += kebab.slice(lastIndex, kebab.length-lastIndex);
-    return snake;
-}
+var button1 = document.querySelector("button");
+var body = document.querySelector("body");
 
-while(1){
-    var response = prompt("Enter kebab case string");
-    alert(kebabToSnake(response));
-}
+button1.addEventListener("click", function() {
+    body.classList.toggle("body");
+});
+
+// my_p.textContent = 'My first paragraph';
+// setInterval(function() {
+    
+// }, 2000);
+
