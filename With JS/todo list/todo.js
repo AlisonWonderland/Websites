@@ -1,23 +1,34 @@
+var list = document.getElementById("todo-list");
+
 window.setTimeout(function() {
     var todoList = [];
+    var todoListHTML = [];
 
     function newTodo() {
-        var todo = prompt("Enter a new todo");
+        var todo = prompt("Enter a new todo"); //Change when adding text box
         todoList.push(todo);
+
+        var listNumber = todoListHTML.length + 1;
+
+        var todoHTML = "<li>" + listNumber + ". " + todo + "</li>";
+        todoListHTML.push(todoHTML);
     }
 
-    function printTodos() {
-        if(todoList.length == 0) {
-            console.log("No todos in list");
-            return;
+    //This function adds a new todo to the website after it was added.
+    function printTodo() {
+        for(var i = todoListHTML.length - 1; i < todoListHTML.length; ++i) {
+            list.innerHTML += todoListHTML[i];
         }
-
-        console.log("********");
-        todoList.forEach(function(todo, index) {
-            console.log(index + ': ' + todo);
-        });
-        console.log("********");
     }
+
+    //This function prints todo again after a todo was deleted
+    function printAllTodos() {
+        list.innerHTML = "";
+        for(var i = 0; i < todoListHTML.length; ++i) {
+            list.innerHTML += todoListHTML[i];
+        }
+    }
+
 
     function deleteTodo() {
         index = prompt("Enter index of todo to delete");
@@ -34,27 +45,28 @@ window.setTimeout(function() {
 
         else {
             todoList.splice(index,1);
+            todoListHTML.splice(index,1);
+            printAllTodos();
         }
 
-        console.log("Todo Removed");
+        console.log("Todo Removed"); //Delete after adding input text box.
     }
 
-    var response = "";
-
-    do {
-        response = prompt("What would you like to do?");
+    while(1) {
+        var  response = prompt("What would you like to do?");
 
         if(response == "new"){
             newTodo();
-        }
-        else if(response == "list"){
-            printTodos();
+            printTodo();
         }
         else if(response == "delete"){
             deleteTodo();
         }
+        else if (response == "quit"){
+            break;
+        }
         else {
             alert("Invalid");
         }
-    }while(response !== "quit")
+    }
 }, 500);
