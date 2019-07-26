@@ -12,6 +12,10 @@ body {
     margin: 1.667%;
 }
 
+.square:hover { 
+    cursor: pointer;
+}
+
 #squares-container {
     margin: 0 auto;
     max-width: 50rem;

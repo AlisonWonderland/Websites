@@ -22,11 +22,19 @@ reset_button.addEventListener("click", function() {
     else {
         colors = create_colors_list(6);
     }
+
     correct_color = pick_color();
     correct_color_display.innerHTML = correct_color.toUpperCase();
+
+    //Make squares visible depending on difficulty mode
+    for(i = 0; i < colors.length; ++i) {
+        squares[i].style.visibility = "visible";
+    }
+
     for(var i = 0; i < squares.length; ++i) {
         //Add colors to squares
         squares[i].style.backgroundColor = colors[i]; 
+
     }
     h1.style.backgroundColor = "#232323";
     reset_button.textContent = "New Colors";
@@ -35,12 +43,16 @@ reset_button.addEventListener("click", function() {
 
 easy_botton.addEventListener("click", function() {
     if(!easy_selected) {
+        message_display.textContent = "";
         easy_botton.classList.add("selected");
         hard_botton.classList.remove("selected");
         colors = create_colors_list(3);
         correct_color = pick_color();
         correct_color_display.innerHTML = correct_color.toUpperCase();
 
+        for(i = 0; i < 3; ++i) {
+            squares[i].style.visibility = "visible";
+        }
         //Hide the bottom row of squares
         for(i = 3; i < squares.length; ++i) {
             squares[i].style.visibility = "hidden";
@@ -61,14 +73,16 @@ easy_botton.addEventListener("click", function() {
 
 hard_botton.addEventListener("click", function() {
     if(!hard_selected) {
+        message_display.textContent = "";
         hard_botton.classList.add("selected");
         easy_botton.classList.remove("selected");
         colors = create_colors_list(6);
         correct_color = pick_color();
         correct_color_display.innerHTML = correct_color.toUpperCase();
 
-        //Unhide the bottom row if needed
-        for(i = 3; i < squares.length; ++i) {
+        //Unhide the WHOLE THING if needed
+        //NOTE CAN REFACTOR THESE TWO FOR LOOPS INTO ONE
+        for(i = 0; i < squares.length; ++i) {
             squares[i].style.visibility = "visible";
         }
 
@@ -85,6 +99,7 @@ hard_botton.addEventListener("click", function() {
     }
 });
 
+//Game code
 for(var i = 0; i < squares.length; ++i) {
     //Add colors to squares
     squares[i].style.backgroundColor = colors[i]; 
