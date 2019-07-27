@@ -28,7 +28,7 @@ reset_button.addEventListener("click", function() {
 
     //Make squares visible depending on difficulty mode
     for(i = 0; i < colors.length; ++i) {
-        squares[i].style.visibility = "visible";
+        squares[i].style.backgroundColor = colors[i];
     }
 
     for(var i = 0; i < squares.length; ++i) {
@@ -51,17 +51,17 @@ easy_botton.addEventListener("click", function() {
         correct_color_display.innerHTML = correct_color.toUpperCase();
 
         for(i = 0; i < 3; ++i) {
-            squares[i].style.visibility = "visible";
+            squares[i].style.backgroundColor = colors[i];
         }
         //Hide the bottom row of squares
         for(i = 3; i < squares.length; ++i) {
-            squares[i].style.visibility = "hidden";
+            squares[i].style.backgroundColor = "#232323";
         }
 
-        for(var i = 0; i < squares.length; ++i) {
-            //Add colors to squares
-            squares[i].style.backgroundColor = colors[i]; 
-        }
+        // for(var i = 0; i < squares.length; ++i) {
+        //     //Add colors to squares
+        //     squares[i].style.backgroundColor = colors[i]; 
+        // }
         
         h1.style.backgroundColor = "steelblue";
         reset_button.textContent = "New Colors";
@@ -83,7 +83,7 @@ hard_botton.addEventListener("click", function() {
         //Unhide the WHOLE THING if needed
         //NOTE CAN REFACTOR THESE TWO FOR LOOPS INTO ONE
         for(i = 0; i < squares.length; ++i) {
-            squares[i].style.visibility = "visible";
+            squares[i].style.backgroundColor = colors[i]; /*Might*/
         }
 
         for(var i = 0; i < squares.length; ++i) {
@@ -121,7 +121,7 @@ for(var i = 0; i < squares.length; ++i) {
         }
         //Changes that happen when we guess incorrectly
         else {
-            this.style.visibility = "hidden";
+            this.style.backgroundColor = "#232323";
             message_display.textContent = "Try again.";
         }
     });
@@ -130,7 +130,7 @@ for(var i = 0; i < squares.length; ++i) {
 function change_to_correct_color(num_squares) {
     for(var i = 0; i < num_squares; ++i) {
         squares[i].style.backgroundColor = correct_color;
-        squares[i].style.visibility = "visible";
+        /*Might be an issue here*/
     }
 }
 

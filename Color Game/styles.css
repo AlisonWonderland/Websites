@@ -2,14 +2,21 @@ body {
     background-color: #232323;
     margin: 0; /*To make menu bar go across screen*/
     padding: 0; /*To make menu bar go across screen*/
+    font-family: "Indie Flower", "Arial";
+    font-size: 1.4rem;
 }
 
 .square {
     width: 30%;
-    background: purple;
+    background-color: purple;
     padding-bottom: 30%;
     float: left;
     margin: 1.667%;
+    border-radius: 4rem .5rem;
+    border: .1rem; /*added for scrivener color change*/
+    transition: background-color .4s;
+    --webkit-transition: background-color; /*could delete these two. check support*/
+    --moz-transition: background-color;
 }
 
 .square:hover { 
@@ -17,22 +24,57 @@ body {
 }
 
 #squares-container {
-    margin: 0 auto;
+    margin: 1.4rem auto;
     max-width: 50rem;
 }
 
 h1 {
     color: white;
     margin: 0;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: steelblue;
+    text-transform: uppercase;
+}
+
+#correct-color-display {
+    font-size: 190%;
+}
+
+#message {
+    display: inline-block;
+    width: 22%;
+    font-size: 1.4rem;
 }
 
 #menu-container {
     background-color: white;
-    height: 2rem;
+    height: 2.1rem;
     text-align: center;
 }
 
 .selected {
-    background-color: blue;
+    color: white;
+    background-color: steelblue;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    padding: 1px 6px 0px;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.3s;
+    --webkit-transition: all 0.3s; /*could delete these two. check support*/
+    --moz-transition: all 0.3s;
+    outline: none; /*To remove outline that stays after you've pressed button*/
+}
+
+button:hover {
+    color: white;
+    background-color: steelblue;
 }
