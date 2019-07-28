@@ -1,4 +1,6 @@
 var colors = create_colors_list(6);
+var easy_selected = false;
+var hard_selected = true;
 
 var squares = document.getElementsByClassName("square");
 var correct_color = pick_color();
@@ -9,13 +11,66 @@ var reset_button = document.getElementById("reset-colors");
 var easy_botton = document.getElementById("easy");
 var hard_botton = document.getElementById("hard");
 
-var easy_selected = false;
-var hard_selected = true;
-
-correct_color_display.innerHTML = correct_color.toUpperCase();
+init();
 
 reset_button.addEventListener("click", function() {
+    reset();
+});
+
+easy_botton.addEventListener("click", function() {
+    if(!easy_selected) {
+        easy_botton.classList.add("selected");
+        hard_botton.classList.remove("selected");
+        easy_selected = true;
+        hard_selected = false;
+        reset();
+    }
+});
+
+hard_botton.addEventListener("click", function() {
+    if(!hard_selected) {
+        hard_botton.classList.add("selected");
+        easy_botton.classList.remove("selected");
+        easy_selected = false;
+        hard_selected = true;
+        reset();
+    }
+});
+
+function init() {
+    correct_color_display.innerHTML = correct_color;
+    //Game code
+    for(var i = 0; i < squares.length; ++i) {
+        //Add colors to squares
+        squares[i].style.backgroundColor = colors[i]; 
+
+        //Check if square is the right one
+        squares[i].addEventListener("click", function() {
+            var clickColor = this.style.backgroundColor;
+            //Changes that happen when we guess correctly
+            if(clickColor === correct_color) {
+                message_display.textContent = "Correct!";
+                h1.style.backgroundColor = correct_color;
+                reset_button.textContent = "Play again?";
+                if(easy_selected) {  
+                    change_to_correct_color(3);
+                }
+                else {
+                    change_to_correct_color(6);
+                }
+            }
+            //Changes that happen when we guess incorrectly
+            else {
+                this.style.backgroundColor = "#232323"; 
+                message_display.textContent = "Try again.";
+            }
+        });
+    }
+}
+
+function reset() {
     message_display.textContent = "";
+
     if(easy_selected) {
         colors = create_colors_list(3);
     }
@@ -24,113 +79,34 @@ reset_button.addEventListener("click", function() {
     }
 
     correct_color = pick_color();
-    correct_color_display.innerHTML = correct_color.toUpperCase();
+    correct_color_display.innerHTML = correct_color;
 
-    //Make squares visible depending on difficulty mode
+    //Paint squares
     for(i = 0; i < colors.length; ++i) {
         squares[i].style.backgroundColor = colors[i];
     }
 
-    for(var i = 0; i < squares.length; ++i) {
-        //Add colors to squares
-        squares[i].style.backgroundColor = colors[i]; 
-
+    //Make squares visible depending on difficulty mode
+    if(easy_selected) {
+        //Hide the bottom row of squares
+        for(i = 3; i < squares.length; ++i) {
+            squares[i].style.display = "none";
+        }
+    }
+    else {
+        //Unhide the bottom row of squares
+        for(i = 3; i < squares.length; ++i) {
+            squares[i].style.display = "block";
+        }
     }
     h1.style.backgroundColor = "steelblue";
     reset_button.textContent = "New Colors";
-    
-});
-
-easy_botton.addEventListener("click", function() {
-    if(!easy_selected) {
-        message_display.textContent = "";
-        easy_botton.classList.add("selected");
-        hard_botton.classList.remove("selected");
-        colors = create_colors_list(3);
-        correct_color = pick_color();
-        correct_color_display.innerHTML = correct_color.toUpperCase();
-
-        for(i = 0; i < 3; ++i) {
-            squares[i].style.backgroundColor = colors[i];
-        }
-        //Hide the bottom row of squares
-        for(i = 3; i < squares.length; ++i) {
-            squares[i].style.backgroundColor = "#232323";
-        }
-
-        // for(var i = 0; i < squares.length; ++i) {
-        //     //Add colors to squares
-        //     squares[i].style.backgroundColor = colors[i]; 
-        // }
-        
-        h1.style.backgroundColor = "steelblue";
-        reset_button.textContent = "New Colors";
-        
-        easy_selected = true;
-        hard_selected = false;
-    }
-});
-
-hard_botton.addEventListener("click", function() {
-    if(!hard_selected) {
-        message_display.textContent = "";
-        hard_botton.classList.add("selected");
-        easy_botton.classList.remove("selected");
-        colors = create_colors_list(6);
-        correct_color = pick_color();
-        correct_color_display.innerHTML = correct_color.toUpperCase();
-
-        //Unhide the WHOLE THING if needed
-        //NOTE CAN REFACTOR THESE TWO FOR LOOPS INTO ONE
-        for(i = 0; i < squares.length; ++i) {
-            squares[i].style.backgroundColor = colors[i]; /*Might*/
-        }
-
-        for(var i = 0; i < squares.length; ++i) {
-            //Add colors to squares
-            squares[i].style.backgroundColor = colors[i]; 
-        }
-
-        h1.style.backgroundColor = "steelblue";
-        reset_button.textContent = "New Colors";
-
-        easy_selected = false;
-        hard_selected = true;
-    }
-});
-
-//Game code
-for(var i = 0; i < squares.length; ++i) {
-    //Add colors to squares
-    squares[i].style.backgroundColor = colors[i]; 
-
-    //Check if square is the right one
-    squares[i].addEventListener("click", function() {
-        var clickColor = this.style.backgroundColor;
-        //Changes that happen when we guess correctly
-        if(clickColor === correct_color) {
-            message_display.textContent = "Correct!";
-            h1.style.backgroundColor = correct_color;
-            reset_button.textContent = "Play again?";
-            if(easy_selected) {  
-                change_to_correct_color(3);
-            }
-            else {
-                change_to_correct_color(6);
-            }
-        }
-        //Changes that happen when we guess incorrectly
-        else {
-            this.style.backgroundColor = "#232323";
-            message_display.textContent = "Try again.";
-        }
-    });
 }
 
+//Paints all squares to the correct color when you win.
 function change_to_correct_color(num_squares) {
     for(var i = 0; i < num_squares; ++i) {
         squares[i].style.backgroundColor = correct_color;
-        /*Might be an issue here*/
     }
 }
 
@@ -155,7 +131,6 @@ function create_color() {
     var b = Math.floor(Math.random() * 255 + 1);
 
     var rgb = "rgb(" + r + ", " + g + ", " + b + ")";
-    console.log(rgb); //Keeping this to see the rgb values when the colors complement each other well.
 
     return rgb;
 }

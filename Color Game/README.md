@@ -1,10 +1,8 @@
 # Color picker guessing game
 
-## Future changes, a note:
+## Possible future changes, a note:
 * Change the background colors of the header and the color grid to scrivener colors
 * Play with the border radius of the squares. Maybe circles?
-* Big one: refactor the js code
-* Check transition adoption rate.
 * Add a timer.
 
 ## What I learned

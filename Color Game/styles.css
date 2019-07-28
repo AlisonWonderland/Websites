@@ -15,12 +15,8 @@ body {
     border-radius: 4rem .5rem;
     border: .1rem; /*added for scrivener color change*/
     transition: background-color .4s;
-    --webkit-transition: background-color; /*could delete these two. check support*/
+    --webkit-transition: background-color; 
     --moz-transition: background-color;
-}
-
-.square:hover { 
-    cursor: pointer;
 }
 
 #squares-container {
@@ -69,7 +65,7 @@ button {
     letter-spacing: 1px;
     font-size: inherit;
     transition: all 0.3s;
-    --webkit-transition: all 0.3s; /*could delete these two. check support*/
+    --webkit-transition: all 0.3s;
     --moz-transition: all 0.3s;
     outline: none; /*To remove outline that stays after you've pressed button*/
 }
