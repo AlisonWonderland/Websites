@@ -1,3 +1,4 @@
+"use strict";
 var colors = create_colors_list(6);
 var easy_selected = false;
 var hard_selected = true;
@@ -82,20 +83,20 @@ function reset() {
     correct_color_display.innerHTML = correct_color;
 
     //Paint squares
-    for(i = 0; i < colors.length; ++i) {
+    for(var i = 0; i < colors.length; ++i) {
         squares[i].style.backgroundColor = colors[i];
     }
 
     //Make squares visible depending on difficulty mode
     if(easy_selected) {
         //Hide the bottom row of squares
-        for(i = 3; i < squares.length; ++i) {
+        for(var i = 3; i < squares.length; ++i) {
             squares[i].style.display = "none";
         }
     }
     else {
         //Unhide the bottom row of squares
-        for(i = 3; i < squares.length; ++i) {
+        for(var i = 3; i < squares.length; ++i) {
             squares[i].style.display = "block";
         }
     }
