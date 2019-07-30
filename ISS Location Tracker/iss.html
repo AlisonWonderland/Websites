@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaflet Quick Start Example</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href="p.css">
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+ <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+ integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+ crossorigin=""></script>
+</head>
+<body>
+    <div id="mapid"></div>
+    <script>
+        var mymap = L.map('mapid').setView([51.505, -0.09], 2);
+        L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=nmxK8s89ZRurAw06URQt', {
+            attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+            maxZoom: 18
+        }).addTo(mymap);
+        var marker = L.marker([51.5, -0.09]).addTo(mymap).bindPopup('The ISS').openPopup();
+        moveISS();
+        function moveISS () {
+            $.getJSON('http://api.open-notify.org/iss-now.json', function(data) {
+                var lat = data['iss_position']['latitude'];
+                var lon = data['iss_position']['longitude'];
+
+                // See leaflet docs for setting up icons and map layers
+                // The update to the map is done here:
+                // iss.setLatLng([lat, lon]);
+                // isscirc([lat,lon])
+                marker.setLatLng([lat, lon]);
+                mymap.panTo([lat, lon], animate=true);
+            });
+            setTimeout(moveISS, 5000); 
+        }
+    </script>
+</body>
+</html>
