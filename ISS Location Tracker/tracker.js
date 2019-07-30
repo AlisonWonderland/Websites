@@ -6,7 +6,7 @@ var mymap = L.map('mapid').setView([51.505, -0.09], 4.5);
         }).addTo(mymap);
 
         var iss_icon = L.icon({
-            iconUrl: 'ISS-sm.png',
+            iconUrl: 'images/ISS-sm.png',
             iconSize: [80, 95]
         });
 
