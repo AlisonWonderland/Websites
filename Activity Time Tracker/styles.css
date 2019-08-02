@@ -1,3 +1,12 @@
 .activity {
     background-color: blue;
+    border: 2px solid black;
 }
+
+.hide {
+    display: none;
+}
+
+/* .unhide {
+    display: block;
+} */
