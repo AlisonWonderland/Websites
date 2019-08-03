@@ -1,6 +1,3 @@
-
-
-
 $("ul").on("click", "li", function() {
     $(this).toggleClass("check-off");
 });
