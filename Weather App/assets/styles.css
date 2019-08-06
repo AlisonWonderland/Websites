@@ -1,0 +1,23 @@
+.weather-tile {
+    margin: 0 auto;
+    border: 2px solid black;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+}
+
+#weather-image {
+    background-color: black;
+}
+
+#weather-image img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px; 
+    width: 250px;
+    display: inline-block;
+}
+
+#weather-info {
+
+}
