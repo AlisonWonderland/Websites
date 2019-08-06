@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
+
 #weather-image {
     background-color: black;
 }

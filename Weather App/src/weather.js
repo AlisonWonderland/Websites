@@ -1,44 +1,75 @@
-var rain_button = document.querySelector("#rain");
-var sunny_button = document.querySelector("#sunny");
+var input_box = document.querySelector("input");
+var search_button = document.querySelector("#search");
 
+var weather_tile = document.querySelector(".weather-tile");
 var image = document.querySelector("#weather-image");
-
-rain_button.addEventListener("click", function() {
-    image.innerHTML = '<img src="assets/Weather Icons/rainy-1.svg">';
-});
-
-sunny_button.addEventListener("click", function() {
-    image.innerHTML = '<img src="assets/Weather Icons/day.svg">';
-});
-
+var weather_desc_display = document.querySelector("#weather-desc");
+var humidity_percentage_display = document.querySelector("#percentage");
 var temp_displays = {
     current: document.querySelector("#current-temp"),
     max: document.querySelector("#max-temp"),
     min: document.querySelector("#min-temp")
 };
 
-var weather_image_display = document.querySelector("#weather-image");
-var weather_desc_display = document.querySelector("#weather-desc");
-var humidity_percentage_display = document.querySelector("#percentage");
+var init_tile_html = weather_tile.innerHTML;
 
-// WEATHER API REQUESTS
-var requestURL = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=imperial&appid=6620fb18917ffa433db64ebf83cde131';
-var request = new XMLHttpRequest();
-request.open('GET', requestURL);
 
-request.onload = function() {
-    var data = JSON.parse(this.response);
-
-    var current_temp = data.main.temp;
-    var weather_desc = data.weather[0].description;
-    var min_temp = data.main.temp_min;
-    var max_temp = data.main.temp_max;
-    var humidity = data.main.humidity;
-    updateWeatherData(data);
-    updateWeatherImage(data);
+function reinitializeVariables() {
+    weather_tile = document.querySelector(".weather-tile");
+    image = document.querySelector("#weather-image");
+    weather_desc_display = document.querySelector("#weather-desc");
+    humidity_percentage_display = document.querySelector("#percentage");
+    temp_displays.current = document.querySelector("#current-temp");
+    temp_displays.max = document.querySelector("#max-temp");
+    temp_displays.min = document.querySelector("#min-temp");
 }
 
-request.send();
+input_box.addEventListener("keydown", event => {
+    if (event.keyCode === 13) {
+        extractLocation();
+    }
+});
+
+search_button.addEventListener("click", function() {
+    extractLocation();
+});
+
+function extractLocation() {
+    var location = input_box.value;
+    var requestURL = addParams(location);
+    sendRequest(requestURL);
+}
+
+function addParams(location) {
+    var url = new URL("https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=6620fb18917ffa433db64ebf83cde131");
+    url.searchParams.append('q', location);
+    return url;
+}
+
+// WEATHER API REQUESTS
+function sendRequest(requestURL) {
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    
+    //put this in its on function
+    request.onload = function() {
+        if(request.status === 200) {
+            var data = JSON.parse(this.response);
+            weather_tile.innerHTML = init_tile_html;
+            //Needed after setting the innerHTML
+            reinitializeVariables();
+            updateWeatherData(data);
+            updateWeatherImage(data);
+            unhideInfo();
+        }
+        else {
+            errorMessage();
+            unhideInfo();
+        }
+    }
+
+    request.send();
+}
 
 
 function updateWeatherData(data) {
@@ -47,7 +78,6 @@ function updateWeatherData(data) {
     temp_displays.min.textContent = data.main.temp_min;
     temp_displays.max.textContent = data.main.temp_max;
     humidity_percentage_display.textContent = data.main.humidity;
-    return;
 }
 
 function updateWeatherImage(data) {
@@ -81,4 +111,10 @@ function updateWeatherImage(data) {
     }
 }
 
+function unhideInfo() {
+    weather_tile.classList.remove("hide");
+}
 
+function errorMessage() {
+    weather_tile.innerHTML = "<p>Error<p>"
+}
