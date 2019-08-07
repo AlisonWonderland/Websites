@@ -11,19 +11,6 @@ var temp_displays = {
     min: document.querySelector("#min-temp")
 };
 
-var init_tile_html = weather_tile.innerHTML;
-
-
-function reinitializeVariables() {
-    weather_tile = document.querySelector(".weather-tile");
-    image = document.querySelector("#weather-image");
-    weather_desc_display = document.querySelector("#weather-desc");
-    humidity_percentage_display = document.querySelector("#percentage");
-    temp_displays.current = document.querySelector("#current-temp");
-    temp_displays.max = document.querySelector("#max-temp");
-    temp_displays.min = document.querySelector("#min-temp");
-}
-
 input_box.addEventListener("keydown", event => {
     if (event.keyCode === 13) {
         extractCity();
@@ -53,15 +40,11 @@ function sendRequest(requestURL) {
             return response.json();
         })
         .then(function showWeather(response) {
-            var data = response;
-            weather_tile.innerHTML = init_tile_html;
-            //Needed after setting the innerHTML
-            reinitializeVariables();
-            updateWeatherData(data);
-            updateWeatherImage(data);
+            updateWeatherData(response);
+            updateWeatherImage(response);
             unhideTile();
         })
-        .catch(function(error) {
+        .catch(function() {
             hideTile();
             errorMessage();
         });
