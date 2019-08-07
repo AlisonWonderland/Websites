@@ -26,49 +26,45 @@ function reinitializeVariables() {
 
 input_box.addEventListener("keydown", event => {
     if (event.keyCode === 13) {
-        extractLocation();
+        extractCity();
     }
 });
 
 search_button.addEventListener("click", function() {
-    extractLocation();
+    extractCity();
 });
 
-function extractLocation() {
-    var location = input_box.value;
-    var requestURL = addParams(location);
+function extractCity() {
+    var city = input_box.value;
+    var requestURL = addParams(city);
     sendRequest(requestURL);
 }
 
-function addParams(location) {
+function addParams(city) {
     var url = new URL("https://api.openweathermap.org/data/2.5/weather?units=imperial&appid=6620fb18917ffa433db64ebf83cde131");
-    url.searchParams.append('q', location);
+    url.searchParams.append('q', city);
     return url;
 }
 
 // WEATHER API REQUESTS
 function sendRequest(requestURL) {
-    var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    
-    //put this in its on function
-    request.onload = function() {
-        if(request.status === 200) {
-            var data = JSON.parse(this.response);
+    fetch(requestURL, {mode: "cors"})
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function showWeather(response) {
+            var data = response;
             weather_tile.innerHTML = init_tile_html;
             //Needed after setting the innerHTML
             reinitializeVariables();
             updateWeatherData(data);
             updateWeatherImage(data);
-            unhideInfo();
-        }
-        else {
+            unhideTile();
+        })
+        .catch(function(error) {
+            hideTile();
             errorMessage();
-            hideInfo();
-        }
-    }
-
-    request.send();
+        });
 }
 
 function updateWeatherData(data) {
@@ -110,14 +106,15 @@ function updateWeatherImage(data) {
     }
 }
 
-function unhideInfo() {
+function unhideTile() {
     weather_tile.classList.remove("hide");
 }
 
-function hideInfo() {
+function hideTile() {
     weather_tile.classList.add("hide");
 }
 
 function errorMessage() {
-    alert("Location not found");
+    console.log("Oops, not a real city name");
+    alert("City not found");
 }
