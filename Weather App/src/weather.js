@@ -64,13 +64,12 @@ function sendRequest(requestURL) {
         }
         else {
             errorMessage();
-            unhideInfo();
+            hideInfo();
         }
     }
 
     request.send();
 }
-
 
 function updateWeatherData(data) {
     temp_displays.current.textContent = data.main.temp;
@@ -115,6 +114,10 @@ function unhideInfo() {
     weather_tile.classList.remove("hide");
 }
 
+function hideInfo() {
+    weather_tile.classList.add("hide");
+}
+
 function errorMessage() {
-    weather_tile.innerHTML = "<p>Error<p>"
+    alert("Location not found");
 }

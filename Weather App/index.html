@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Blinker:200,300,400&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     <link rel="stylesheet" href="assets/styles.css">
     <title>Weather app</title>
 </head>
 <body>
-    <h1>Weather</h1>
+    <h1>Current Weather</h1>
 
     <input type="text" placeholder="Enter a location">
-
     <button id="search">Search</button>
 
     <div class="weather-tile hide">
@@ -17,12 +17,11 @@
         <div id="weather-info">
             <div><span id="current-temp"></span> &#176;F</div>
             <div id="weather-desc"></div>
-            <div class="value">Today's High: <span id="max-temp"></span> &#176;F</div>
-            <div class="value">Today's Low: <span id="min-temp"></span> &#176;F</div>
-            <div class="value">Humidity: <span id="percentage"></span>%</div>
+            <div>Today's High: <span id="max-temp"></span> &#176;F</div>
+            <div>Today's Low: <span id="min-temp"></span> &#176;F</div>
+            <div>Humidity: <span id="percentage"></span>%</div>
         </div>
     </div>
-
 <script src="src/weather.js"></script>
 </body>
 </html>
