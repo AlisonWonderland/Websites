@@ -1,0 +1,220 @@
+
+
+html, body {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.display-mode, .nosleep {
+    display: inline-block;
+}
+
+/* .display-mode {
+    margin-left: auto;
+} */
+
+.nosleep {
+    /* margin-right: auto; */
+    padding-right: 20%;
+}
+
+.buttons {
+    float: right;
+}
+
+.main-container {
+    text-align: center;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+#title:link, 
+#author:link,
+#github:link {
+    text-decoration: none;
+}
+
+#title:visited,
+#author:visited,
+#github:visited {
+    text-decoration: none;
+}
+
+#author:hover, 
+#title:hover {
+    text-decoration: underline;
+}
+  
+#author, #title {
+    color: black;
+    display: block;
+}
+
+#title {
+    font-size: 2.5rem;
+}
+
+#author {
+    font-size: 1.7rem;
+}
+
+#story {
+    font-size: 1.5rem;
+    display: inline-block;
+    text-align: left;
+    width: 55%;
+}
+
+.fa-github {
+    font-size: 4rem;
+    color: black;
+    /* color: gold; */
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 1560px) {
+    #title {
+        font-size: 
+    }
+    #story {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    #story {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    #story {
+        font-size: 1.4rem;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #story {
+        font-size: 1.3rem;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #story {
+        font-size: 1.25rem;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    #story {
+        font-size: 1.15rem;
+        width: 90%;
+    }
+}
+
+/* Below is for the navbar */
+
+header.navbar {
+    position: absolute;
+    background-color: #D6EFFF;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar div{
+    border: 2px solid black;
+}
+
+div, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* *, ::after, ::before {
+    box-sizing: inherit;
+} */
+
+div.navbar-left,
+div.navbar-right {
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+div.navbar-left {
+    display: inline-block;
+    /* float: left; */
+    background: red;
+    margin-left: 20px;
+    margin-right: auto;
+    /* height: 100%; */
+    /* width: 33.3333vw; */
+}
+
+div.navbar-center {
+    display: inline-block;
+    /* width: 33.3333vw; */
+    text-align: center;
+    flex: .7 .2 auto;
+}
+
+div.navbar-right {
+    display: inline-block;
+    flex: 0 1 auto;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+/*
+header {
+    background-color: #D6EFFF;
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 50px;
+} */
+
+/* '*' Means wildcard, which refers to any item in our header */
+/* header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+nav ul li { 
+  list-style:none;
+ 
+}
+
+a {
+    text-decoration: none;
+} */
+
+  
