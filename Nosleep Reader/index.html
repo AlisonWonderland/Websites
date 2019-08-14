@@ -3,6 +3,8 @@
 <head>
     <title>Nosleep reader</title>
     <link rel="icon" href="assets/nosleep-icon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arapey:400,400i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <script src="https://kit.fontawesome.com/406b77ded1.js"></script>
 </head>
@@ -34,7 +36,7 @@
 </header> -->
 
 <header>
-    <nav>
+    <!-- <nav>
         <div class="nosleep">
             Nosleep Reader
         </div>
@@ -42,15 +44,28 @@
             <button class="display-mode dark">Dark Mode</button>
             <button class="display-mode light">Light Mode</button>
         </div>
-    </nav>
+    </nav> -->
+        <ul>
+            <li class="nosleep">Nosleep Reader</li>
+            <li class="mode">
+                <!-- <button class="display-mode dark">Dark Mode</button> -->
+                <i class="fas fa-moon"></i>
+            </li>
+        </ul>
 </header>
 
 <div class="main-container">
-    <button class="next">Next story</button>
+    <!-- <button class="next">Next story</button> -->
 
     <!-- <div class="story-info"> -->
         <a id="title" href="" target="_blank"></a>
         <a id="author" href="" target="_blank"></a>
+        <div id="points">
+            <!-- Points: # -->
+        </div>
+        <div id="is-series">
+            <!-- Is a series: Part of a series. Not a series: A standalone story -->
+        </div>
         <!-- <h1 id="title"></h1>
         <h2 id="author"></h2> -->
         <div id="story">
@@ -62,7 +77,7 @@
 </div>
 
 <footer>
-    <a id="github" href="https://github.com/AlisonWonderland/Websites" target="_blank"><i class="fab fa-github"></i></a> 
+    <a id="github" href="https://github.com/AlisonWonderland/Websites/tree/master/Nosleep%20Reader" target="_blank"><i class="fab fa-github"></i></a> 
 </footer>
 
 <script src="src/nosleep.js"></script>

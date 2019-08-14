@@ -1,11 +1,33 @@
+var displayMode = document.querySelector(".mode");
 var title = document.querySelector("#title");
 var author = document.querySelector("#author");
+var points = document.querySelector("#points");
+var isSeries = document.querySelector("#is-series")
 var story = document.querySelector("#story");
 var nextButton = document.querySelectorAll(".next");
+
+var darkMode = '<i class="fas fa-moon"></i>';
+var lightMode = '<i class="fas fa-sun"></i>';
+var currentMode = "light";
+var nextModeHTML = darkMode;
 
 var stories = []; // Holds the links
 var currentStory = null; // Link to the .json data of the story
 var storyIndex = 0;
+
+displayMode.addEventListener("click", function() {
+    if(currentMode === "light") {
+        //change css
+        currentMode = "dark";
+        nextModeHTML = lightMode;
+        displayMode.innerHTML = lightMode;
+    }
+    else {
+        currentMode = "light";
+        nextModeHTML = darkMode;
+        displayMode.innerHTML = darkMode;
+    }
+});
 
 for(var i = 0; i < nextButton.length; ++i) {
     nextButton[i].addEventListener("click", function() {
@@ -64,10 +86,12 @@ async function fetchPost(url) {
             var post = {
                 title: response[0].data.children[0].data.title,
                 author: response[0].data.children[0].data.author,
-                story: decodeEntities(response[0].data.children[0].data.selftext_html)
+                story: decodeEntities(response[0].data.children[0].data.selftext_html),
+                upvotes: response[0].data.children[0].data.ups,
+                flairText: response[0].data.children[0].data.link_flair_text
             };
 
-            formatStory(post);
+            updateContent(post);
             addLinks(response[0].data.children[0].data.url, post.author);
             // console.log(response[0].data.children[0].data.selftext_html[3]);
         });
@@ -76,10 +100,17 @@ async function fetchPost(url) {
         // });
 }
 
-function formatStory(post) {
+function updateContent(post) {
     title.textContent = post.title;
     author.textContent = "By " + "/u/" + post.author;
     story.innerHTML = post.story;
+    points.textContent = "Upvotes: " + String(post.upvotes);
+    if(post.flairText === "Series") {
+        isSeries.textContent = "Part of a series";
+    }
+    else {
+        isSeries.textContent = "A standalone story";
+    }
 }
 
 function addLinks(url, user) {

@@ -1,40 +1,86 @@
-
+@font-face {
+    font-family: "NightOfTerror";
+    src: url("../assets/fonts/CFOneTwoTrees-Regular.ttf")  format("truetype"); 
+}
 
 html, body {
     margin: 0;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px 10%;
+.body {
+
 }
 
-.display-mode, .nosleep {
-    display: inline-block;
+header {
+    background: white;
+    padding: 20px 0px;
+    height: 70px;
+    margin-bottom: 50px;
+    /* border-bottom: 2px solid black; */
 }
 
-/* .display-mode {
-    margin-left: auto;
-} */
+/* For the items in the header */
+ul {
+    display: grid;
+    grid-template-columns: 1fr repeat(1, auto) 1fr;
+    grid-column-gap: 5px;
+    justify-items: center;
+}
+
+li:nth-child(1) { grid-column-start: 2;}
+/* li:nth-child(4) { margin-left: auto; } */
+
+/* for demo only */
+ul { padding: 0; margin: 0; list-style: none; }
+li { height: 100%}
+
+/* Change the name */
+.mode {
+    height: 100%;
+    font-size: 3.1rem;
+}
+
+.mode:hover {
+    cursor: pointer;
+}
+
+.fa-moon {
+    color: #FF2741;
+}
+
+.fa-sun {
+    color: #FFA02F;
+}
 
 .nosleep {
-    /* margin-right: auto; */
-    padding-right: 20%;
+    font-size: 3.9rem;
+    font-family: NightOfTerror, 'Times New Roman', Times, serif;
+    /* font-weight: 600; */
+    letter-spacing: 2px;
+    
 }
 
-.buttons {
-    float: right;
-}
-
-.main-container {
+.main-container, footer {
+    /* font-family: 'Libre Caslon Display', 'Times New Roman', Times, serif; */
+    font-family: 'Arapey', 'Times New Roman', Times, serif;
     text-align: center;
+    width: 55%;
+    margin: 0 auto;
 }
-
+/* 
 button {
     margin: 0 auto;
     display: block;
+} */
+
+.next {
+    /* margin: 0 auto; */
+    display: block;
+    margin: 20px auto;
+    height: 50px;
+    width: 150px;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
 }
 
 #title:link, 
@@ -56,47 +102,63 @@ button {
   
 #author, #title {
     color: black;
-    display: block;
+    display: table;
+    margin: 20px auto;
 }
 
 #title {
-    font-size: 2.5rem;
+    font-style: italic;
+    font-size: 2.8rem;
+    /* width: 55%; */
 }
 
 #author {
     font-size: 1.7rem;
 }
 
+#points, #is-series {
+    font-size: 1.4rem;
+}
+
 #story {
     font-size: 1.5rem;
     display: inline-block;
     text-align: left;
-    width: 55%;
+    margin-bottom: 0px;
+    /* width: 55%; */
+}
+
+footer {
+    margin: 40px auto;
 }
 
 .fa-github {
     font-size: 4rem;
     color: black;
+
     /* color: gold; */
 }
 
-footer {
+/* footer {
     text-align: center;
-}
+} */
 
 @media screen and (max-width: 1560px) {
-    #title {
-        font-size: 
-    }
-    #story {
+    .main-container {
         width: 60%;
     }
+    /* #story {
+        width: 60%;
+    } */
 }
 
 @media screen and (max-width: 1450px) {
-    #story {
+    .main-container {
         width: 65%;
     }
+    /* #story {
+        width: 65%;
+    } */
 }
 
 @media screen and (max-width: 1350px) {
@@ -128,93 +190,5 @@ footer {
 }
 
 /* Below is for the navbar */
-
-header.navbar {
-    position: absolute;
-    background-color: #D6EFFF;
-    width: 100vw;
-    height: 50px;
-    position: fixed;
-    flex-wrap: wrap;
-}
-
-.navbar {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.navbar div{
-    border: 2px solid black;
-}
-
-div, ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* *, ::after, ::before {
-    box-sizing: inherit;
-} */
-
-div.navbar-left,
-div.navbar-right {
-    flex: 0 0 auto;
-    max-width: 100%;
-}
-
-div.navbar-left {
-    display: inline-block;
-    /* float: left; */
-    background: red;
-    margin-left: 20px;
-    margin-right: auto;
-    /* height: 100%; */
-    /* width: 33.3333vw; */
-}
-
-div.navbar-center {
-    display: inline-block;
-    /* width: 33.3333vw; */
-    text-align: center;
-    flex: .7 .2 auto;
-}
-
-div.navbar-right {
-    display: inline-block;
-    flex: 0 1 auto;
-    margin-left: auto;
-    margin-right: 20px;
-}
-
-/*
-header {
-    background-color: #D6EFFF;
-    position: fixed;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    height: 50px;
-} */
-
-/* '*' Means wildcard, which refers to any item in our header */
-/* header * {
-    display: inline;
-}
-
-header li {
-    margin: 20px;
-}
-
-nav ul li { 
-  list-style:none;
- 
-}
-
-a {
-    text-decoration: none;
-} */
 
   
