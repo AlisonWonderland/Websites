@@ -1,5 +1,9 @@
 # Nosleep Reader
-A website formatter for the nosleep subreddit.
+A website formatter for the nosleep subreddit. 
+
+## Notes
+* The light/dark mode styling is inspired by the League of Legends Universe website. Example story: 
+https://universe.leagueoflegends.com/en_US/story/leblanc-color-story/
 
 
 ## Outside assets used

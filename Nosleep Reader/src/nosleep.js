@@ -1,4 +1,5 @@
-var displayMode = document.querySelector(".mode");
+var displayMode = document.querySelector(".mode-logo");
+var body = document.querySelector("body");
 var title = document.querySelector("#title");
 var author = document.querySelector("#author");
 var points = document.querySelector("#points");
@@ -18,11 +19,15 @@ var storyIndex = 0;
 displayMode.addEventListener("click", function() {
     if(currentMode === "light") {
         //change css
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
         currentMode = "dark";
         nextModeHTML = lightMode;
         displayMode.innerHTML = lightMode;
     }
     else {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
         currentMode = "light";
         nextModeHTML = darkMode;
         displayMode.innerHTML = darkMode;
