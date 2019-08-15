@@ -1,4 +1,4 @@
-var displayMode = document.querySelector(".mode-logo");
+var modeLogo = document.querySelector(".mode-logo");
 var body = document.querySelector("body");
 var title = document.querySelector("#title");
 var author = document.querySelector("#author");
@@ -16,51 +16,16 @@ var stories = []; // Holds the links
 var currentStory = null; // Link to the .json data of the story
 var storyIndex = 0;
 
-displayMode.addEventListener("click", function() {
-    if(currentMode === "light") {
-        //change css
-        body.classList.remove("light-mode");
-        body.classList.add("dark-mode");
-        currentMode = "dark";
-        nextModeHTML = lightMode;
-        displayMode.innerHTML = lightMode;
-    }
-    else {
-        body.classList.remove("dark-mode");
-        body.classList.add("light-mode");
-        currentMode = "light";
-        nextModeHTML = darkMode;
-        displayMode.innerHTML = darkMode;
-    }
-});
-
-for(var i = 0; i < nextButton.length; ++i) {
-    nextButton[i].addEventListener("click", function() {
-        getNextStory();
-    });
-}
-
-async function getNextStory() {
-    if(storyIndex < 10) {
-        ++storyIndex;
-        await fetchPost(stories[storyIndex]);
-    }   
-}
-
 init();
 
 async function init() {
     var nosleepURL = "https://www.reddit.com/r/nosleep/.json";
     await fetchNosleep(nosleepURL);
-    console.log("url", stories[0]);
     await fetchPost(stories[storyIndex]); //display the first story on startup
 }
 
+// Request 10 stories from 'nosleep'
 async function fetchNosleep(url) {
-    // fetch subreddit, add .json to url?
-    // get the first 10 posts that are not distinguished, put their links in an Array.
-    // create an array called current story, when they press next, go to the next button/increment to the next story
-    // update html
     return fetch(url, {mode: "cors"})
         .then(function(response) {
             return response.json();
@@ -71,7 +36,7 @@ async function fetchNosleep(url) {
 
 }
 
-// Add the posts to 'stories'
+// Add the non-moderator posts to 'stories' array
 function getTenStories(response) {
     var i = 0;
     while(stories.length < 10) {
@@ -98,18 +63,16 @@ async function fetchPost(url) {
 
             updateContent(post);
             addLinks(response[0].data.children[0].data.url, post.author);
-            // console.log(response[0].data.children[0].data.selftext_html[3]);
         });
-        // .catch(function() {
-            
-        // });
 }
 
+// Display the story
 function updateContent(post) {
     title.textContent = post.title;
     author.textContent = "By " + "/u/" + post.author;
     story.innerHTML = post.story;
     points.textContent = "Upvotes: " + String(post.upvotes);
+
     if(post.flairText === "Series") {
         isSeries.textContent = "Part of a series";
     }
@@ -123,6 +86,7 @@ function addLinks(url, user) {
     author.setAttribute("href", "https://www.reddit.com/user/" + user);
 }
 
+// Obtained from https://stackoverflow.com/a/9609450/8637925
 var decodeEntities = (function() {
 // this prevents any overhead from creating the object each time
     var element = document.createElement('div');
@@ -133,9 +97,7 @@ var decodeEntities = (function() {
             str = str.replace(/<script[^>]*>([\S\s]*?)<\/script>/gmi, '');
             str = str.replace(/<\/?\w(?:[^"'>]|"[^"]*"|'[^']*')*>/gmi, '');
             element.innerHTML = str;
-            // document.querySelector("body").appendChild(element);
             str = element.textContent;
-            // element.textContent = '';
         }
 
         return str;
@@ -143,3 +105,38 @@ var decodeEntities = (function() {
 
     return decodeHTMLEntities;
 })();
+
+// ------------------------------------Event Listeners--------------------------------------
+modeLogo.addEventListener("click", function() {
+    if(currentMode === "light") {
+        body.classList.remove("light-mode");
+        body.classList.add("dark-mode");
+        currentMode = "dark";
+        nextModeHTML = lightMode;
+        modeLogo.innerHTML = lightMode;
+    }
+    else {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+        currentMode = "light";
+        nextModeHTML = darkMode;
+        modeLogo.innerHTML = darkMode;
+    }
+});
+
+for(var i = 0; i < nextButton.length; ++i) {
+    nextButton[i].addEventListener("click", function() {
+        // Go to the top of the page
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        getNextStory();
+    });
+}
+
+// Display the next story
+async function getNextStory() {
+    if(storyIndex < 10) {
+        ++storyIndex;
+        await fetchPost(stories[storyIndex]);
+    }   
+}
